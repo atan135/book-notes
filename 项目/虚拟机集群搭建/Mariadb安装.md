@@ -55,3 +55,30 @@ $ mysql -uroot -ppasswd
 $ mysql -h127.0.0.1 -uroot -ppasswd
 ```
 
+客户机只需要安装mysql 客户端即可 `yum install mysql`
+
+因为mysql安装时的账号只允许本地的root账号，所以需要新增账号来用于客户连接，处理客户请求
+
+1. 打开特定机器的root登陆特权
+
+   ```mysql
+    GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY 'passwd' WITH GRANT OPTION;
+    FLUSH PRIVILEGES;
+   ```
+
+   如此处理后，root可以在特定机器上登陆了
+
+   `mysql -uroot -ppasswd -h192.168.0.100 -P3306`
+
+2. 新增用户用于普通事务处理，为了方便处理，不限制host。
+
+   ```mysql
+   CREATE USER 'username'@'%' IDENTIFIED BY 'passwd'
+   CREATE DATABASE dbname DEFAULT CHARSET=utf8mb4;
+   GRANT ALL PRIVILEGES ON dbname.* TO 'username'@'%'IDENTIFIED BY 'passwd' WITH GRANT OPTION;
+   FLUSH PRIVILEGES;
+   ```
+
+   如此处理后，所有网络上的机器，均可以通过该账号登陆Mariadb。
+
+   ` mysql -uusername -ppasswd -h192.168.0.101 -P3306`
