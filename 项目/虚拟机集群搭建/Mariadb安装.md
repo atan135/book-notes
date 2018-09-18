@@ -82,3 +82,4 @@ $ mysql -h127.0.0.1 -uroot -ppasswd
    如此处理后，所有网络上的机器，均可以通过该账号登陆Mariadb。
 
    ` mysql -uusername -ppasswd -h192.168.0.101 -P3306`
+
