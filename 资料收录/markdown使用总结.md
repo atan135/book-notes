@@ -1,4 +1,4 @@
-发现了一个整理的很好的markdown使用手册，来自CSDN([https://mp.csdn.net/mdeditor#](https://mp.csdn.net/mdeditor#))
+发现了一个整理的很好的markdown使用手册，来自CSDN([https://mp.csdn.net/mdeditor#](https://mp.csdn.net/mdeditor#))，测试展现使用typora软件。
 
 ## 最常用的标记
 
