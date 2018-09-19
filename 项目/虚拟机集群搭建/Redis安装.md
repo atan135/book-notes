@@ -11,6 +11,11 @@ $ cd redis-4.0.10
 $ make
 $ make test
 $ mv redis-4.0.10 /usr/local/redis
+
+## 客户机安装redis-cli
+$ scp redis-cli dest@ip:/path/to/save
+# 在另一台机器
+$ mv redis-cli /usr/local/bin/
 ```
 
 ## Redis的启动
