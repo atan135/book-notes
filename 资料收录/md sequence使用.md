@@ -16,6 +16,7 @@ markdown的sequence插件来源于js-sequence-diagram(https://bramp.github.io/js
 TITLE: this is a title
 PARTICIPANT you as y
 participant me as m
+participant other
 note left of y: you note sth
 note right of other: other say sth
 note over m: I say sth
@@ -30,6 +31,7 @@ y -->> other: also say hello
 TITLE: this is a title
 PARTICIPANT you as y
 participant me as m
+participant other
 note left of y: you note sth
 note right of other: other say sth
 note over m: I say sth
