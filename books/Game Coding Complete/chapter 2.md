@@ -6,7 +6,7 @@
 
 ```flow
 st=>start: 应用层
-ed=>end: 显示层
+ed=>end: 显示层（可以多层）
 op=>operation: 游戏逻辑层
 st->op->ed
 ```
