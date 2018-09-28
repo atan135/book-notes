@@ -11,3 +11,8 @@ op=>operation: 游戏逻辑层
 st->op->ed
 ```
 
+**应用运行逻辑：**
+
+Game Logic层负责接收数据、处理数据、返回数据、维系状态，Game View层负责接收Game Logic数据，展示图像、音频、特效等。这里无论AI对象还是玩家Player，都是会以相同方式接收Game Logic层的状态更新，依据状态更新做出对应的展示反应。
+
+并且屏蔽Game Logic的本地更新和remote更新的差异。
