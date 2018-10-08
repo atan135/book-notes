@@ -2,6 +2,7 @@
 
 * 计算机类书籍
   * [分布式系统-概念与设计](https://github.com/atan135/book-notes/blob/master/books/%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F-%E6%A6%82%E5%BF%B5%E4%B8%8E%E8%AE%BE%E8%AE%A1/%E7%9B%AE%E5%BD%95.md)
+  * [游戏代码大全(Game Coding Complete)](https://github.com/atan135/book-notes/tree/master/books/Game%20Coding%20Complete)
 * 项目搭建
 
   * [分布式系统环境搭建](https://github.com/atan135/book-notes/tree/master/%E9%A1%B9%E7%9B%AE/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA)
@@ -9,6 +10,7 @@
   * [开源协议介绍](https://github.com/atan135/book-notes/blob/master/%E8%B5%84%E6%96%99%E6%94%B6%E5%BD%95/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE%E4%BB%8B%E7%BB%8D.md)
   * [Markdown使用总结](https://github.com/atan135/book-notes/blob/master/%E8%B5%84%E6%96%99%E6%94%B6%E5%BD%95/markdown%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.md)
   * [Markdown sequence使用](https://github.com/atan135/book-notes/blob/master/%E8%B5%84%E6%96%99%E6%94%B6%E5%BD%95/md%20sequence%E4%BD%BF%E7%94%A8.md)
+  * [Git SSH-key使用](https://github.com/atan135/book-notes/blob/master/%E8%B5%84%E6%96%99%E6%94%B6%E5%BD%95/Git%20SSH%20key%E4%BD%BF%E7%94%A8.md)
 * [LeetCode解题集](https://github.com/atan135/book-notes/blob/master/LeetCode/index.md)
 * 
 
