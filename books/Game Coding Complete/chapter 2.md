@@ -42,3 +42,37 @@ Game Logic层负责接收数据、处理数据、返回数据、维系状态，G
 
 
 
+## GameView
+
+![](http://p9zl5r4hu.bkt.clouddn.com/2018-10-09gameview.png)
+
+在游戏系统中，player和AI有着相同的GameLogic层，处理逻辑，但是Gameview层是有着不同的模块。
+
+AI Agent中：
+
+* **Stimulus Interpreter**：用于处理接收event、过滤event
+* **Decision System**：是AI行为决策的处理系统
+* **Process Manager**：如果AI的某项行为、处理某些事件需要消耗多个frametime，那么就需要使用这个模块。
+* **Options**：选项配置，在开发调试过程中十分重要。
+
+## Game Network Architecture
+
+![](http://p9zl5r4hu.bkt.clouddn.com/2018-10-09network_architecture.png)
+
+**remote game view** ：
+
+位于服务端，被服务端GameLogic认为是和本地Player或者AI一样的模块，它与Game Logic使用事件event交互（和其他AI没有区别），但是对接收到的事件经过处理后使用TCP/UDP将encode的消息发送出去，接收来自remote client的**remote game logic**返回的控制信息。
+
+**remote game logic**：
+
+位于客户端，游戏的最终数据一致性在服务端的geme logic层，客户端的remote game logic用于保存一份数据备份，同时需要一种策略用于管理之间消息传递的延迟。
+
+**样例：** 
+
+射击游戏，网速会拖累玩家，因为玩家接收到一个事件，如果太延迟，remote game logic需要处理适配，让事件和服务端的game logic同步。所以可能会出现，射向你的子弹速度，远快于你发射的子弹速度。同理，网速差的玩家建主，对其他玩家不公平，因为他们都会对你的事件有延迟。
+
+
+
+## DirectX和OpenGL的选择
+
+DirectX设计在位于应用层和应用层之间，如果一个Action硬件层能够处理，那么DirectX就会调用驱动完成。如果硬件层没有相关的处理功能，那么DirectX就会在软件层面模拟这个调用，这个的速度就会更慢。
