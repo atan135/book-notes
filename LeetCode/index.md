@@ -1,5 +1,7 @@
 # LeetCode已刷题目整理
 
+* [1. Two Sum](https://github.com/atan135/book-notes/blob/master/LeetCode/1.md)
+* [2. Add Two Number](https://github.com/atan135/book-notes/blob/master/LeetCode/2.md)
 * [367. Valid Perfect Square](https://github.com/atan135/book-notes/blob/master/LeetCode/367.md)
 * [389. Find the Difference](https://github.com/atan135/book-notes/blob/master/LeetCode/389.md)
 * [394. Decode String](https://github.com/atan135/book-notes/blob/master/LeetCode/394.md)
