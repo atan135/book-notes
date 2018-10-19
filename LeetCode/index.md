@@ -8,6 +8,7 @@
 * [6. ZigZag Conversion](https://github.com/atan135/book-notes/blob/master/LeetCode/6.md)
 * [7. Reverse Integer](https://github.com/atan135/book-notes/blob/master/LeetCode/7.md)
 * [8. String to Integer(Atoi)](https://github.com/atan135/book-notes/blob/master/LeetCode/8.md)
+* [9. Palindrome Number](https://github.com/atan135/book-notes/blob/master/LeetCode/9.md)
 * [367. Valid Perfect Square](https://github.com/atan135/book-notes/blob/master/LeetCode/367.md)
 * [389. Find the Difference](https://github.com/atan135/book-notes/blob/master/LeetCode/389.md)
 * [394. Decode String](https://github.com/atan135/book-notes/blob/master/LeetCode/394.md)
