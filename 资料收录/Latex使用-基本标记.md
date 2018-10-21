@@ -2,6 +2,15 @@
 
 自己手打一遍增加印象
 
+**间隔：**
+
+| 语法 | 效果     | 语法       | 效果           | 语法      | 效果          |
+| ---- | -------- | ---------- | -------------- | --------- | ------------- |
+| a\,b | $$a\,b$$ | a \qquad b | $$a \qquad b$$ | a \quad b | $$a \quad b$$ |
+| a\;b | $$a\;b$$ | a\!b       | $$a\!b$$       | a\ b      | $$a\ b$$      |
+
+
+
 **声调：**
 
 | 语法         | 效果             | 语法         | 效果             | 语法           | 效果               |
@@ -137,11 +146,79 @@
 | \overline{a,b,c}      | $$\overline{a,b,c}$$      | \overbrace{1+2}    | $$\overbrace{1+2}$$      | \underbrace{1,2}     | #$$\underbrace{1,2}$$    |
 | \sum_{k=1}^{100}{k^2} | $$\sum_{k=1}^{100}{k^2}$$ | \prod_{k=1}^{5}k^2 | $$\prod_{k=1}^{5}{k^2}$$ | \coprod_{k=1}^{5}k^2 | $$\coprod_{k=1}^{5}k^2$$ |
 
-| 语法                  | 效果                      | 语法                       | 效果                           |
-| --------------------- | ------------------------- | -------------------------- | ------------------------------ |
-| \lim_{x\to\infty} x^2 | $$\lim_{x\to\infty} x^2$$ | \int_{x=1}^{5} x^2\,dx     | $$\int_{x=1}^{5} x^2\,dx$$     |
-| \iint_{D}^{W}\,dx\,dy | $$\iint_{D}^{W}\,dx\,dy$$ | \iiint_{S}^{E}\,dx\,dy\,dz | $$\iiint_{S}^{E}\,dx\,dy\,dz$$ |
-|                       |                           |                            |                                |
-|                       |                           |                            |                                |
-|                       |                           |                            |                                |
+| 语法                            | 效果                                | 语法                       | 效果                           |
+| ------------------------------- | ----------------------------------- | -------------------------- | ------------------------------ |
+| \lim_{x\to\infty} x^2           | $$\lim_{x\to\infty} x^2$$           | \int_{x=1}^{5} x^2\,dx     | $$\int_{x=1}^{5} x^2\,dx$$     |
+| \iint_{D}^{W}\,dx\,dy           | $$\iint_{D}^{W}\,dx\,dy$$           | \iiint_{S}^{E}\,dx\,dy\,dz | $$\iiint_{S}^{E}\,dx\,dy\,dz$$ |
+| \iiiint_{S}^{E}\,dx\,dy\,dz\,dj | $$\iiiint_{S}^{E}\,dx\,dy\,dz\,dj$$ | \oint_{C}(x^3dx+y^2dy)     | $$\oint_{C}(x^3dx+y^2dy)$$     |
+| \bigcap_1^{n}p                  | $$\bigcap_1^{n}p$$                  | \bigcup_1^{n}p             | $$\bigcup_1^{n}p$$             |
+
+**分数、矩阵及多行列式：**
+
+| 语法                                                         | 效果                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| \frac{2}{4} = 0.5                                            | $$\frac{2}{4} = 0.5$$                                        |
+| \tfrac{2}{4} = 0.5                                           | $$\tfrac{2}{4}=0.5$$                                         |
+| \cfrac{2}{c+\cfrac{2}{d+\cfrac{2}{4}}}=a                     | $$\cfrac{2}{c+\cfrac{2}{d+\cfrac{2}{4}}}=a$$                 |
+| \dfrac{2}{4}=0.5 \qquad \dfrac{2}{a+\dfrac{2}{b+\dfrac{2}{4}}}=1 | $$\dfrac{2}{4}=0.5 \qquad \dfrac{2}{a+\dfrac{2}{b+\dfrac{2}{4}}}=1$$ |
+| \dbinom{n}{r}=\dbinom{n}{n-r}=C_r^n=C_{n-r}^n                | $$\dbinom{n}{r}=\dbinom{n}{n-r}=C_r^n=C_{n-r}^n$$            |
+| \tbinom{n}{r}=\tbinom{n}{n-r}=C_r^n=C_{n-r}^n                | $$\tbinom{n}{r}=\tbinom{n}{n-r}=C_r^n=C_{n-r}^n$$            |
+| \begin{matrix} x & y \\\\ z & v \end{matrix}                 | $$\begin{matrix} x&y \\ z & v \end{matrix}$$                 |
+| \begin{vmatrix} x & y \\\\ z & v \end{vmatrix}               | $$\begin{vmatrix} x & y \\ z & v \end{vmatrix}$$             |
+| \begin{Vmatrix} x & y \\\\ z & v \end{Vmatrix}               | $$\begin{Vmatrix} x & y \\ z & v \end{Vmatrix}$$             |
+| \begin{bmatrix} 0 & \cdots & 0 \\\\ \vdots & \ddots & \vdots \\\\ 0 & \cdots & 0 \end{bmatrix} | $$\begin{bmatrix} 0 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & 0 \end{bmatrix}$$ |
+| \begin{Bmatrix} x & y \\\\ z & k \end{Bmatrix}               | $$\begin{Bmatrix} x & y \\ z & k \end{Bmatrix}$$             |
+| \begin{pmatrix} x & y \\\\ z & k \end{pmatrix}               | $$\begin{pmatrix} x & y \\ z & k \end{pmatrix}$$             |
+| \bigl \begin{smallmatrix} x & y \\\\ z & k \end{smallmatrix} | $$\bigl( \begin{smallmatrix} x & y \\\\ z & k \end{smallmatrix} \bigr)$$ |
+| f(n)=\begin{cases}n / 2, & \mbox{if } n \mbox{ is even} \\\\ 3n + 1, & \mbox{if } n \mbox{ is odd} \end{cases} | $$f(n)=\begin{cases}n / 2, & \mbox{if } n \mbox{ is even} \\ 3n + 1, & \mbox{if } n \mbox{ is odd} \end{cases}$$ |
+| \begin{align} fx & = (m+n)^2 \\\\ & = m^2 + 2mn + n^2 \\\\ \end{align} | $$\begin{align} fx & = (m+n)^2 \\ &  = m^2 + 2mn + n^2 \\ \end{align}$$ |
+| \begin{alignat}{2} f(x) &= (m-n)^2 \\\\ f(x) & = (m-n)^2 \\\\ & = m^2 - 2mn + n^2 \\\\ \end{alignat} | $$\begin{alignat}{1} f(x) &= (m-n)^2 \\ f(x) & = (m-n)^2 \\ & = m^2 - 2mn + n^2 \\ \end{alignat}$$ |
+| \begin{array}{lcl} z &=& a + b + c \\\\ f(x,y,z) &=& a + b + c + d \end{array} | $$\begin{array}{lcl} z &=& a + b + c \\ f(x,y,z) &=& a + b + c + d \end{array}$$ |
+| \begin{cases} 2x + y = 0 \\\\ x - y = 2\end{cases}           | $$\begin{cases} 2x + y = 0 \\ x - y = 2\end{cases}$$         |
+| \begin{array}{\|l\|l\|c\|} a & b & S \\\\ \hline 0&0&1 \\\\ 1&0&1 \end{array} | $$\begin{array}{|l|l|c|} a & b & S \\ \hline 0&0&1 \\ 1&0&1 \end{array}$$ |
+
+**希腊字母：**
+
+| 语法                                           | 效果                                               |
+| ---------------------------------------------- | -------------------------------------------------- |
+| \Alpha\Beta\Gamma\Delta\Epsilon\Zeta\Eta\Theta | $$\Alpha\Beta\Gamma\Delta\Epsilon\Zeta\Eta\Theta$$ |
+| \Iota\Kappa\Lambda\Mu\Nu\Xi\Omicron\Pi         | $$\Iota\Kappa\Lambda\Mu\Nu\Xi\Omicron\Pi$$         |
+| \Rho\Sigma\Tau\Upsilon\Phi\Chi\Psi\Omega       | $$\Rho\Sigma\Tau\Upsilon\Phi\Chi\Psi\Omega$$       |
+
+| 语法                                           | 效果                                               |
+| ---------------------------------------------- | -------------------------------------------------- |
+| \alpha\beta\gamma\delta\epsilon\zeta\eta\theta | $$\alpha\beta\gamma\delta\epsilon\zeta\eta\theta$$ |
+| \iota\kappa\lambda\mu\nu\xi\omicron\pi         | $$\iota\kappa\lambda\mu\nu\xi\omicron\pi$$         |
+| \rho\sigma\tau\upsilon\phi\chi\psi\omega       | $$\rho\sigma\tau\upsilon\phi\chi\psi\omega$$       |
+
+| 语法                | 效果                    |
+| ------------------- | ----------------------- |
+| \boldsymbol{\Alpha} | $$\boldsymbol{\Alpha}$$ |
+
+**字体：**
+
+| 语法                    | 效果                        |
+| ----------------------- | --------------------------- |
+| \mathbb{ABCDEFG}        | $$\mathbb{ABCDEFG}$$        |
+| \mathbf{01234567abcdef} | $$\mathbf{01234567abcdef}$$ |
+| \boldsymbol{01234}      | $$\boldsymbol{01234}$$      |
+| \mathit{abcdef}         | $$\mathit{abcdef}$$         |
+| \mathrm{ABCDEF}         | $$\mathrm{ABCDEF}$$         |
+| \mathcal{ABCDEF}        | $$\mathcal{ABCDEF}$$        |
+
+**括号：**
+
+| 语法                                 | 效果                                     | 语法                                     | 效果                                         |
+| ------------------------------------ | ---------------------------------------- | ---------------------------------------- | -------------------------------------------- |
+| \left(\frac{1}{2}\right)             | $$\left(\frac{1}{2}\right)$$             | \left[\frac{1}{2}\right]                 | $$\left[\frac{1}{2}\right]$$                 |
+| \left\\{\frac{1}{2}\\right\}         | $$\left\{\frac{1}{2}\right\}$$           | \left\langle\frac{1}{2}\right\rangle     | $$\left\langle\frac{1}{2}\right\rangle$$     |
+| \left\|\frac{1}{2}\right\|           | $$\left|\frac{1}{2}\right|$$             | \left\\|\frac{1}{2}\right\\|             | $$\left\|\frac{1}{2}\right\|$$               |
+| \left\lfloor\frac{1}{2}\right\rfloor | $$\left\lfloor\frac{1}{2}\right\rfloor$$ | \left\lceil\frac{1}{2}\right\rceil       | $$\left\lceil\frac{1}{2}\right\rceil$$       |
+| \left /\frac{1}{2}\right\backslash   | $$\left /\frac{1}{2}\right\backslash$$   | \left\uparrow\frac{1}{2}\right\downarrow | $$\left\uparrow\frac{1}{2}\right\downarrow$$ |
+| \left[ 0,1 \right)                   | $$\left[ 0,1 \right)$$                   | \left\{\frac{1}{2}\right .               | $$\left\{\frac{1}{2}\right .$$               |
+|                                      |                                          |                                          |                                              |
+|                                      |                                          |                                          |                                              |
+|                                      |                                          |                                          |                                              |
+
+
 
