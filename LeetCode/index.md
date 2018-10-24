@@ -13,6 +13,7 @@
 * [14. Longest Common Prefix](https://github.com/atan135/book-notes/blob/master/LeetCode/14.md)
 * [15. 3Sum](https://github.com/atan135/book-notes/blob/master/LeetCode/15.md)
 * [17. Letter Combinations of a Phone Number](https://github.com/atan135/book-notes/blob/master/LeetCode/17.md)
+* [91. Decode Ways](https://github.com/atan135/book-notes/blob/master/LeetCode/91.md)
 * [367. Valid Perfect Square](https://github.com/atan135/book-notes/blob/master/LeetCode/367.md)
 * [389. Find the Difference](https://github.com/atan135/book-notes/blob/master/LeetCode/389.md)
 * [394. Decode String](https://github.com/atan135/book-notes/blob/master/LeetCode/394.md)
