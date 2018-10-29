@@ -23,6 +23,8 @@
 * [25. Reverse Nodes in k-Group](https://github.com/atan135/book-notes/blob/master/LeetCode/25.md)
 * [26. Remove Duplicates from Sorted Array](https://github.com/atan135/book-notes/blob/master/LeetCode/26.md)
 * [27. Remove Elements](https://github.com/atan135/book-notes/blob/master/LeetCode/27.md)
+* [28. Implement strStr()](https://github.com/atan135/book-notes/blob/master/LeetCode/28.md)
+* [29. Devide Two Integers](https://github.com/atan135/book-notes/blob/master/LeetCode/29.md)
 * [91. Decode Ways](https://github.com/atan135/book-notes/blob/master/LeetCode/91.md)
 * [367. Valid Perfect Square](https://github.com/atan135/book-notes/blob/master/LeetCode/367.md)
 * [389. Find the Difference](https://github.com/atan135/book-notes/blob/master/LeetCode/389.md)
