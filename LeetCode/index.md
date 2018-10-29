@@ -19,6 +19,8 @@
 * [21. Merge Two Sorted Lists](https://github.com/atan135/book-notes/blob/master/LeetCode/21.md)
 * [22. Generate Parenthese](https://github.com/atan135/book-notes/blob/master/LeetCode/22.md)
 * [23. Merge k Sorted Lists](https://github.com/atan135/book-notes/blob/master/LeetCode/23.md)
+* [24. Swap Nodes in Pairs](https://github.com/atan135/book-notes/blob/master/LeetCode/24.md)
+* [25. Reverse Nodes in k-Group](https://github.com/atan135/book-notes/blob/master/LeetCode/25.md)
 * [91. Decode Ways](https://github.com/atan135/book-notes/blob/master/LeetCode/91.md)
 * [367. Valid Perfect Square](https://github.com/atan135/book-notes/blob/master/LeetCode/367.md)
 * [389. Find the Difference](https://github.com/atan135/book-notes/blob/master/LeetCode/389.md)
