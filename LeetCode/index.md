@@ -1,5 +1,7 @@
 # LeetCode已刷题目整理
 
+> 说明：以下解题，如果没有说明，我的解法的运行效率基本在LeetCode的排名在靠前位置，如果LeetCode有更好的解法，我会在解法中有说明，或者附上排名靠前的解法。LeetCode里面使用sync_with_stdio开启输出流加速的方式提高自己解法的旁门，不太推荐，有违刷题本意。
+
 * [1. Two Sum](https://github.com/atan135/book-notes/blob/master/LeetCode/1.md)
 * [2. Add Two Number](https://github.com/atan135/book-notes/blob/master/LeetCode/2.md)
 * [4. Median of Two Sorted Arrays](https://github.com/atan135/book-notes/blob/master/LeetCode/4.md)
@@ -25,6 +27,9 @@
 * [27. Remove Elements](https://github.com/atan135/book-notes/blob/master/LeetCode/27.md)
 * [28. Implement strStr()](https://github.com/atan135/book-notes/blob/master/LeetCode/28.md)
 * [29. Devide Two Integers](https://github.com/atan135/book-notes/blob/master/LeetCode/29.md)
+* [30. Substring with Concatenation of Words](https://github.com/atan135/book-notes/blob/master/LeetCode/30.md)
+* [31. Next Permutation](https://github.com/atan135/book-notes/blob/master/LeetCode/31.md)
+* [32. Longest Valid Parenthese](https://github.com/atan135/book-notes/blob/master/LeetCode/32.md)
 * [91. Decode Ways](https://github.com/atan135/book-notes/blob/master/LeetCode/91.md)
 * [367. Valid Perfect Square](https://github.com/atan135/book-notes/blob/master/LeetCode/367.md)
 * [389. Find the Difference](https://github.com/atan135/book-notes/blob/master/LeetCode/389.md)
