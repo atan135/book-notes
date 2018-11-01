@@ -33,6 +33,8 @@
 * [33. Search in Rotated Sorted Array]((https://github.com/atan135/book-notes/blob/master/LeetCode/33.md)
 * [34. Find First and Last Position of Element in Sorted Array](https://github.com/atan135/book-notes/blob/master/LeetCode/34.md)
 * [35. Search Insert Position](https://github.com/atan135/book-notes/blob/master/LeetCode/35.md)
+* [36. Valid Sudoku](https://github.com/atan135/book-notes/blob/master/LeetCode/36.md)
+* [37. Sudoku Solver](https://github.com/atan135/book-notes/blob/master/LeetCode/37.md)
 * [91. Decode Ways](https://github.com/atan135/book-notes/blob/master/LeetCode/91.md)
 * [367. Valid Perfect Square](https://github.com/atan135/book-notes/blob/master/LeetCode/367.md)
 * [389. Find the Difference](https://github.com/atan135/book-notes/blob/master/LeetCode/389.md)
