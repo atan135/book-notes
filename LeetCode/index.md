@@ -49,6 +49,7 @@
 * [50. Pow(x,n)](https://github.com/atan135/book-notes/blob/master/LeetCode/50.md)
 * [51. N-Queens](https://github.com/atan135/book-notes/blob/master/LeetCode/51.md)
 * [52. N-Queens II](https://github.com/atan135/book-notes/blob/master/LeetCode/52.md)
+* [53. Maximum SubArray](https://github.com/atan135/book-notes/blob/master/LeetCode/53.md)
 * [91. Decode Ways](https://github.com/atan135/book-notes/blob/master/LeetCode/91.md)
 * [367. Valid Perfect Square](https://github.com/atan135/book-notes/blob/master/LeetCode/367.md)
 * [389. Find the Difference](https://github.com/atan135/book-notes/blob/master/LeetCode/389.md)
