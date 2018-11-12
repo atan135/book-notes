@@ -9,3 +9,7 @@
 * [第七章：主循环](https://github.com/atan135/book-notes/blob/master/books/Game%20Coding%20Complete/chapter%207.md)
 * [第八章：游戏资源的加载和缓存](https://github.com/atan135/book-notes/blob/master/books/Game%20Coding%20Complete/chapter%208.md)
 
+
+
+# 放弃了，渣渣书，不看了！
+
