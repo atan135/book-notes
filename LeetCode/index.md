@@ -68,6 +68,8 @@
 * [69. Sqrt(x)](https://github.com/atan135/book-notes/blob/master/LeetCode/69.md)
 * [70. Climbing Stairs](https://github.com/atan135/book-notes/blob/master/LeetCode/70.md)
 * [71. Simplify Path](https://github.com/atan135/book-notes/blob/master/LeetCode/71.md)
+* [73. Set Matrix Zeros](https://github.com/atan135/book-notes/blob/master/LeetCode/73.md)
+* [74. Search a 2D Matrix](https://github.com/atan135/book-notes/blob/master/LeetCode/74.md)
 * [91. Decode Ways](https://github.com/atan135/book-notes/blob/master/LeetCode/91.md)
 * [367. Valid Perfect Square](https://github.com/atan135/book-notes/blob/master/LeetCode/367.md)
 * [389. Find the Difference](https://github.com/atan135/book-notes/blob/master/LeetCode/389.md)
