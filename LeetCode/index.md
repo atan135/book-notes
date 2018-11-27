@@ -83,6 +83,7 @@
 * [506：Relative Ranks](https://github.com/atan135/book-notes/blob/master/LeetCode/506.md)
 * [507：Perfect Number](https://github.com/atan135/book-notes/blob/master/LeetCode/507.md)
 * [520：Detect Capital](https://github.com/atan135/book-notes/blob/master/LeetCode/520.md)
+* [605：Can Place Flower](605.md)
 * [709. To Lower Case](https://github.com/atan135/book-notes/blob/master/LeetCode/709.md)
 * [762. Prime Number of Set Bits in Binary Representation](https://github.com/atan135/book-notes/blob/master/LeetCode/762.md)
 * [859. Buddy Strings](https://github.com/atan135/book-notes/blob/master/LeetCode/859.md)
