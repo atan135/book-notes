@@ -44,7 +44,7 @@ Game Logic层负责接收数据、处理数据、返回数据、维系状态，G
 
 ## GameView
 
-![](http://p9zl5r4hu.bkt.clouddn.com/2018-10-09gameview.png)
+![](http://cdn.zergzerg.cn/2018-10-09gameview.png)
 
 在游戏系统中，player和AI有着相同的GameLogic层，处理逻辑，但是Gameview层是有着不同的模块。
 
@@ -57,7 +57,7 @@ AI Agent中：
 
 ## Game Network Architecture
 
-![](http://p9zl5r4hu.bkt.clouddn.com/2018-10-09network_architecture.png)
+![](http://cdn.zergzerg.cn/2018-10-09network_architecture.png)
 
 **remote game view** ：
 

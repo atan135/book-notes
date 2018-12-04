@@ -51,18 +51,18 @@
 **插入图片：**
 
 ```markdown
-链接：[link](http://p9zl5r4hu.bkt.clouddn.com/myzergicon.png)
-图片：![link](http://p9zl5r4hu.bkt.clouddn.com/myzergicon.png)
-带尺寸图片：![link](http://p9zl5r4hu.bkt.clouddn.com/myzergicon.png=30x30)
+链接：[link](http://cdn.zergzerg.cn/myzergicon.png)
+图片：![link](http://cdn.zergzerg.cn/myzergicon.png)
+带尺寸图片：![link](http://cdn.zergzerg.cn/myzergicon.png=30x30)
 ```
 
 **表现为：**
 
-链接：[link](http://p9zl5r4hu.bkt.clouddn.com/myzergicon.png)
+链接：[link](http://cdn.zergzerg.cn/myzergicon.png)
 
-图片：![link](http://p9zl5r4hu.bkt.clouddn.com/myzergicon.png)
+图片：![link](http://cdn.zergzerg.cn/myzergicon.png)
 
-带尺寸图片：![link](http://p9zl5r4hu.bkt.clouddn.com/myzergicon.png=30x30)
+带尺寸图片：![link](http://cdn.zergzerg.cn/myzergicon.png=30x30)
 
 typora不支持带尺寸。。。
 

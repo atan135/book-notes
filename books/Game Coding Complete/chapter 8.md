@@ -1,6 +1,6 @@
 ## 8. Loading and Caching Game Data 
 
-![](http://p9zl5r4hu.bkt.clouddn.com/2018-10-29graphics.png)
+![](http://cdn.zergzerg.cn/2018-10-29graphics.png)
 
 资源文件分类：
 
