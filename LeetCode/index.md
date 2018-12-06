@@ -93,6 +93,7 @@
 * [908. Smallest Range I](https://github.com/atan135/book-notes/blob/master/LeetCode/908.md)
 * [914. X of a Kind in a Deck of Cards](https://github.com/atan135/book-notes/blob/master/LeetCode/914.md)
 * [915. Partition Array into Disjoint Intervals](https://github.com/atan135/book-notes/blob/master/LeetCode/915.md)
+* [926. Flip String to Monotone Increasing](926.md)
 * [933. Number of Recent Calls](https://github.com/atan135/book-notes/blob/master/LeetCode/933.md)
 * [934. Shortest Bridge](https://github.com/atan135/book-notes/blob/master/LeetCode/934.md)
 * [935. Knight Dial](https://github.com/atan135/book-notes/blob/master/LeetCode/935.md)
