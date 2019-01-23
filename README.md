@@ -10,6 +10,7 @@
   * [开源协议介绍](https://github.com/atan135/book-notes/blob/master/%E8%B5%84%E6%96%99%E6%94%B6%E5%BD%95/%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE%E4%BB%8B%E7%BB%8D.md)
   * [Markdown使用总结](https://github.com/atan135/book-notes/blob/master/%E8%B5%84%E6%96%99%E6%94%B6%E5%BD%95/markdown%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.md)
   * [Markdown sequence使用](https://github.com/atan135/book-notes/blob/master/%E8%B5%84%E6%96%99%E6%94%B6%E5%BD%95/md%20sequence%E4%BD%BF%E7%94%A8.md)
+  * [Markdown 数学标记使用](资料收录/Latex使用-基本标记.md)
 * [LeetCode解题集](https://github.com/atan135/book-notes/blob/master/LeetCode/index.md)
 * 
 
