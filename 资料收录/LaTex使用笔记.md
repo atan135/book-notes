@@ -90,3 +90,16 @@
 25. 对figure和table的类似标记：使用\caption[short title]{full title}命名，使用\listoftables做表目录，使用shortttitle命名该table，使用\label和\ref做引用
 26. 使用\clearpage和\cleardoublepage将所有在float queue中还未放置的图表强制清空在当前页布局，后一个命令还会保证下一页是在右边页。
 
+### 第三章： 数学公式
+
+1. 书写数学公式，可以直接使用\$something...\$， 也可以使用\begin{equation}，两种的差异是前一个会写入段落内，后一个是另起段落，且居中显示，默认情况下equation会写上标号，可以通过\label标记这个公式，用于后续引用\eqref，如果不想使用标号，还可以通过\begin{equation\*}\end{equation\*} ,或者直接 \\[some equation \\]
+2. 对于在行内高度跨度大的公式，默认情况会影响到行间距，如果需要忽略，可以使用\\ smash{}包起来，维持行间距不受影响。
+3. 在公式中，所有文本都会带有特殊的格式，要恢复正常的文本格式，使用\text
+4. 开根号使用\sqrt[2]{3}​这样的结构生成$\sqrt[2]{3}$ ,使用\cdot, \cdots, \ldots, \vdots生成不同的点号$\cdot\quad\cdots\quad\ldots\quad\vdots\quad$
+5. 使用\underline, \overline生成上划线下划线$0.\overline{3}\quad \underline{underline}$
+6. 向量使用\vec或者\overrightarrow，分号使用\frac
+7. 对$a \bmod b$ 使用 a \\bmod b， 对$a \equiv b \pmod{b}$ 使用 a \equiv b \pmod{c}
+8. \frac \tfrac \dfrac的效果分别为 $\frac{1}{5}\qquad \tfrac{1}{5}\qquad \dfrac{1}{5}$
+9. 自定义命令使用\DeclareMathOperator{\argh}{argh}，这个需要用在最前面引言处，和\usepackage位置处
+10. 微分符号使用\partial -> $\partial$ 
+11. 
