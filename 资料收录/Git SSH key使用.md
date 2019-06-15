@@ -121,7 +121,7 @@ $ pbcopy < ~/.ssh/id_rsa.pub
 
 1. 有时候即使如上操作添加了ssh key，但是还是不能正确使用git提交记录。
 
-   原因是此时 `git remote -v` 看到的是https的地址，可以修改为ssh的地址，方法如下
+   原因是此时 `git remote -v` 看到的是https的地址，可以修改为ssh的地址，方法如下：
 
    ```shell
    git remote remove origin
