@@ -117,3 +117,23 @@ $ pbcopy < ~/.ssh/id_rsa.pub
    provide shell access.
    ```
 
+### tips
+
+1. 有时候即使如上操作添加了ssh key，但是还是不能正确使用git提交记录。
+
+   原因是此时 `git remote -v` 看到的是https的地址，可以修改为ssh的地址，方法如下
+
+   ```shell
+   git remote remove origin
+   git remote add origin git@github.com:username:repopath
+   ```
+
+   如果仍然想要在https下免密码登录，可以在~/.netrc文件设定用户名密码，但是这种方式不推荐。
+
+   ```shell
+   machine github.com
+   login username
+   password pwd
+   ```
+
+   
