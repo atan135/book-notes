@@ -126,14 +126,16 @@ $ pbcopy < ~/.ssh/id_rsa.pub
    ```shell
    git remote remove origin
    git remote add origin git@github.com:username:repopath
+   # 有时候需要重新设定上传branch
+git push --set-upstream origin master
    ```
 
    如果仍然想要在https下免密码登录，可以在~/.netrc文件设定用户名密码，但是这种方式不推荐。
-
+   
    ```shell
    machine github.com
    login username
-   password pwd
+password pwd
    ```
-
+   
    
