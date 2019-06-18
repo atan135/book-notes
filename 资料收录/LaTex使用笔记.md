@@ -102,4 +102,17 @@
 8. \frac \tfrac \dfrac的效果分别为 $\frac{1}{5}\qquad \tfrac{1}{5}\qquad \dfrac{1}{5}$
 9. 自定义命令使用\DeclareMathOperator{\argh}{argh}，这个需要用在最前面引言处，和\usepackage位置处
 10. 微分符号使用\partial -> $\partial$ 
-11. 
+11. 在一个符号上标另一个符号，使用形式 \stackrel{#1}{#2}，类似 $f_n(x) \stackrel{*}{\approx} 1$
+12. 求和、积分、求积符合分别用 \sum \int \prod，如 $\sum_{i=1}^{100}\qquad \int_0^{\frac{\pi}{2}}\qquad \prod_{\epsilon}$
+
+13. 下标叠加使用\substack，例如 $\sum^n_{\substack{0<i<n\\ j\subseteq i}} P(i, j) = Q(i,j)$
+
+14. 小中括号使用正常字符，大括号使用\\{ ,其他的分隔符一般需要使用特殊命令，如\\updownarrow . 如果想让括号和里面内容的高度匹配，分别使用\left， \right 处理，例如 $1 + \left[\left(\dfrac{1}{1+\dfrac{1}{2}}\right) \times 1\right]$ ，也可以使用\big, \bigg手动控制这些符号的高度，例如 $\bigg(1+\big(2 + (3 + 4)\big)\bigg)$ 。
+
+15. 如果要手动换行，一般在等号或者其他操作符之前换行，等号的优先级最高，其次是加减号，再是乘除号，尽量避免在其他操作符前做换行操作。或者使用\begin{multline}处理。
+
+16. 竖直对齐更多是使用align配合& 处理，例如
+
+    $\begin{align} a & = b + c\\ & = d + e\end{align}$
+
+    
