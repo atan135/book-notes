@@ -1,0 +1,29 @@
+﻿package PackBuffer;
+// buff结构
+message Buffer {
+	required int32 id = 1;				//战场唯一BUFF ID(一场战斗中，所有的BUFF ID都不会重复)
+	required int32 buff_id = 2; 		//BUFF基础ID
+	required int32 host_aoi_id = 3;		//宿主的AOI ID
+	required int32 life = 4;			//剩余生命数
+	required int32 caster_aoi_id = 5;	//施法者
+	optional int32 param1 = 6;			//额外参数
+}
+
+// 某一个buff数据更新
+message BufferUpdate {
+	required int32 id = 1;
+	required int32 host_aoi_id = 2;
+	optional int32 life = 3;
+	optional int32 param1 = 4;	
+}
+message BufferRemove {
+	required int32 id = 1;
+	required int32 host_aoi_id = 2;
+}
+
+// 整个BUFF的更新包
+message BufferChange {
+	repeated Buffer insert_buffers = 1;	//添加的buff
+	repeated BufferRemove remove_buffers = 2; //删除的buff
+	repeated BufferUpdate update_buffers = 3;	//更新的buff
+}

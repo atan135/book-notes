@@ -1,0 +1,229 @@
+public LuaTable CreatePackBufferBuffer(PackBuffer.Buffer data)
+{
+	LuaTable t = luaEnv.NewTable();
+	t.Set<string, int>("id", data.id);
+	t.Set<string, int>("buff_id", data.buff_id);
+	t.Set<string, int>("host_aoi_id", data.host_aoi_id);
+	t.Set<string, int>("life", data.life);
+	t.Set<string, int>("caster_aoi_id", data.caster_aoi_id);
+	if (data.param1 != null)
+	{
+		t.Set<string, int>("param1", data.param1.GetValueOrDefault());
+	}
+	return t;
+}
+public PackBuffer.Buffer CreatePBPackBufferBuffer(LuaTable t)
+{
+	PackBuffer.Buffer data = new PackBuffer.Buffer();
+	if( t.ContainsKey<string>("id"))
+	{
+		data.id = t.Get<string, int>("id");
+	}
+	else
+	{
+		Log.LogError("Field id Not Exist in LuaTable From Service!!");
+	}
+	if( t.ContainsKey<string>("buff_id"))
+	{
+		data.buff_id = t.Get<string, int>("buff_id");
+	}
+	else
+	{
+		Log.LogError("Field buff_id Not Exist in LuaTable From Service!!");
+	}
+	if( t.ContainsKey<string>("host_aoi_id"))
+	{
+		data.host_aoi_id = t.Get<string, int>("host_aoi_id");
+	}
+	else
+	{
+		Log.LogError("Field host_aoi_id Not Exist in LuaTable From Service!!");
+	}
+	if( t.ContainsKey<string>("life"))
+	{
+		data.life = t.Get<string, int>("life");
+	}
+	else
+	{
+		Log.LogError("Field life Not Exist in LuaTable From Service!!");
+	}
+	if( t.ContainsKey<string>("caster_aoi_id"))
+	{
+		data.caster_aoi_id = t.Get<string, int>("caster_aoi_id");
+	}
+	else
+	{
+		Log.LogError("Field caster_aoi_id Not Exist in LuaTable From Service!!");
+	}
+	if( t.ContainsKey<string>("param1"))
+	{
+		data.param1 = t.Get<string, int>("param1");
+	}
+	return data;
+}
+public LuaTable CreatePackBufferBufferUpdate(PackBuffer.BufferUpdate data)
+{
+	LuaTable t = luaEnv.NewTable();
+	t.Set<string, int>("id", data.id);
+	t.Set<string, int>("host_aoi_id", data.host_aoi_id);
+	if (data.life != null)
+	{
+		t.Set<string, int>("life", data.life.GetValueOrDefault());
+	}
+	if (data.param1 != null)
+	{
+		t.Set<string, int>("param1", data.param1.GetValueOrDefault());
+	}
+	return t;
+}
+public PackBuffer.BufferUpdate CreatePBPackBufferBufferUpdate(LuaTable t)
+{
+	PackBuffer.BufferUpdate data = new PackBuffer.BufferUpdate();
+	if( t.ContainsKey<string>("id"))
+	{
+		data.id = t.Get<string, int>("id");
+	}
+	else
+	{
+		Log.LogError("Field id Not Exist in LuaTable From Service!!");
+	}
+	if( t.ContainsKey<string>("host_aoi_id"))
+	{
+		data.host_aoi_id = t.Get<string, int>("host_aoi_id");
+	}
+	else
+	{
+		Log.LogError("Field host_aoi_id Not Exist in LuaTable From Service!!");
+	}
+	if( t.ContainsKey<string>("life"))
+	{
+		data.life = t.Get<string, int>("life");
+	}
+	if( t.ContainsKey<string>("param1"))
+	{
+		data.param1 = t.Get<string, int>("param1");
+	}
+	return data;
+}
+public LuaTable CreatePackBufferBufferRemove(PackBuffer.BufferRemove data)
+{
+	LuaTable t = luaEnv.NewTable();
+	t.Set<string, int>("id", data.id);
+	t.Set<string, int>("host_aoi_id", data.host_aoi_id);
+	return t;
+}
+public PackBuffer.BufferRemove CreatePBPackBufferBufferRemove(LuaTable t)
+{
+	PackBuffer.BufferRemove data = new PackBuffer.BufferRemove();
+	if( t.ContainsKey<string>("id"))
+	{
+		data.id = t.Get<string, int>("id");
+	}
+	else
+	{
+		Log.LogError("Field id Not Exist in LuaTable From Service!!");
+	}
+	if( t.ContainsKey<string>("host_aoi_id"))
+	{
+		data.host_aoi_id = t.Get<string, int>("host_aoi_id");
+	}
+	else
+	{
+		Log.LogError("Field host_aoi_id Not Exist in LuaTable From Service!!");
+	}
+	return data;
+}
+public LuaTable CreatePackBufferBufferChange(PackBuffer.BufferChange data)
+{
+	LuaTable t = luaEnv.NewTable();
+	if (data.insert_buffers != null)
+	{
+		LuaTable insert_buffers_item = luaEnv.NewTable();
+		for(int i = 0;i < data.insert_buffers.Count; ++i)
+		{
+			LuaTable t_insert_buffers = CreatePackBufferBuffer(data.insert_buffers[i]);
+			insert_buffers_item.Set<int, LuaTable>(i+1, t_insert_buffers);
+		}
+		t.Set<string, LuaTable>("insert_buffers", insert_buffers_item);
+	}
+	if (data.remove_buffers != null)
+	{
+		LuaTable remove_buffers_item = luaEnv.NewTable();
+		for(int i = 0;i < data.remove_buffers.Count; ++i)
+		{
+			LuaTable t_remove_buffers = CreatePackBufferBufferRemove(data.remove_buffers[i]);
+			remove_buffers_item.Set<int, LuaTable>(i+1, t_remove_buffers);
+		}
+		t.Set<string, LuaTable>("remove_buffers", remove_buffers_item);
+	}
+	if (data.update_buffers != null)
+	{
+		LuaTable update_buffers_item = luaEnv.NewTable();
+		for(int i = 0;i < data.update_buffers.Count; ++i)
+		{
+			LuaTable t_update_buffers = CreatePackBufferBufferUpdate(data.update_buffers[i]);
+			update_buffers_item.Set<int, LuaTable>(i+1, t_update_buffers);
+		}
+		t.Set<string, LuaTable>("update_buffers", update_buffers_item);
+	}
+	return t;
+}
+public PackBuffer.BufferChange CreatePBPackBufferBufferChange(LuaTable t)
+{
+	PackBuffer.BufferChange data = new PackBuffer.BufferChange();
+	if(t.ContainsKey("insert_buffers"))
+	{
+		LuaTable t_insert_buffers = t.Get<string, LuaTable>("insert_buffers");
+		data.insert_buffers = new List<PackBuffer.Buffer>();
+		for(int i = 0; ;++i)
+		{
+			if(t_insert_buffers.ContainsKey<int>(i + 1))
+			{
+				LuaTable subT_insert_buffers = t_insert_buffers.Get<int, LuaTable>(i + 1);
+				PackBuffer.Buffer subData_insert_buffers = CreatePBPackBufferBuffer(subT_insert_buffers);
+				data.insert_buffers.Add(subData_insert_buffers);
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+	if(t.ContainsKey("remove_buffers"))
+	{
+		LuaTable t_remove_buffers = t.Get<string, LuaTable>("remove_buffers");
+		data.remove_buffers = new List<PackBuffer.BufferRemove>();
+		for(int i = 0; ;++i)
+		{
+			if(t_remove_buffers.ContainsKey<int>(i + 1))
+			{
+				LuaTable subT_remove_buffers = t_remove_buffers.Get<int, LuaTable>(i + 1);
+				PackBuffer.BufferRemove subData_remove_buffers = CreatePBPackBufferBufferRemove(subT_remove_buffers);
+				data.remove_buffers.Add(subData_remove_buffers);
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+	if(t.ContainsKey("update_buffers"))
+	{
+		LuaTable t_update_buffers = t.Get<string, LuaTable>("update_buffers");
+		data.update_buffers = new List<PackBuffer.BufferUpdate>();
+		for(int i = 0; ;++i)
+		{
+			if(t_update_buffers.ContainsKey<int>(i + 1))
+			{
+				LuaTable subT_update_buffers = t_update_buffers.Get<int, LuaTable>(i + 1);
+				PackBuffer.BufferUpdate subData_update_buffers = CreatePBPackBufferBufferUpdate(subT_update_buffers);
+				data.update_buffers.Add(subData_update_buffers);
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+	return data;
+}

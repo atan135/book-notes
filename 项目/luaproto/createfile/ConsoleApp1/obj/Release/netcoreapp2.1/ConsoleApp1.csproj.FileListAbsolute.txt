@@ -1,0 +1,10 @@
+D:\project\luaproto\createfile\ConsoleApp1\bin\Release\netcoreapp2.1\ConsoleApp1.deps.json
+D:\project\luaproto\createfile\ConsoleApp1\bin\Release\netcoreapp2.1\ConsoleApp1.runtimeconfig.json
+D:\project\luaproto\createfile\ConsoleApp1\bin\Release\netcoreapp2.1\ConsoleApp1.runtimeconfig.dev.json
+D:\project\luaproto\createfile\ConsoleApp1\bin\Release\netcoreapp2.1\ConsoleApp1.dll
+D:\project\luaproto\createfile\ConsoleApp1\bin\Release\netcoreapp2.1\ConsoleApp1.pdb
+D:\project\luaproto\createfile\ConsoleApp1\obj\Release\netcoreapp2.1\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\project\luaproto\createfile\ConsoleApp1\obj\Release\netcoreapp2.1\ConsoleApp1.AssemblyInfoInputs.cache
+D:\project\luaproto\createfile\ConsoleApp1\obj\Release\netcoreapp2.1\ConsoleApp1.AssemblyInfo.cs
+D:\project\luaproto\createfile\ConsoleApp1\obj\Release\netcoreapp2.1\ConsoleApp1.dll
+D:\project\luaproto\createfile\ConsoleApp1\obj\Release\netcoreapp2.1\ConsoleApp1.pdb

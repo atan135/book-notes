@@ -1,0 +1,279 @@
+﻿package PackFight;
+
+// 属性(战斗中不变的东西)
+message FightEffect {
+	required int32 max_hp = 1;			//最大血量值
+	required int32 max_mp = 2;			//最大魔法值
+	required int32 attack = 3;			//攻击值
+	required int32 defence = 4;			//防御值
+
+	required int32 level = 5;			//等级
+
+	required int32 c_skill_id = 14;		//普攻
+	required int32 h_skill_id = 15;		//技能
+	repeated int32 skill_levels = 13;	//技能的等级数组
+}
+
+// 战斗单位
+message FightObject {
+	required int32 id = 1;		//战斗单元的ID
+	required int32 obj_type = 2;//战斗单元的类型(1为我方英雄、2为敌方英雄、3为敌怪物)
+	required int32 base_id = 3;	//基础ID(根据是英雄还是怪物决定取什么表的数据)
+	required int32 position = 4;//放置的位置(英雄位置为1-5)
+	required int64 hp = 5;		//当前血量值
+	required int32 mp = 6;		//当前魔法值
+	required int32 c_turn = 7;	//普通攻击剩余步数（敌方有效）
+	required int32 wave_id = 8;	//属于第几波
+
+	required FightEffect effect = 9;	//对象属性值
+}
+
+// 战斗单位数据更新
+message FightObjectUpdate {
+	required int32 id = 1; 	// ID
+	optional int64 hp = 2;	// 血量值
+	optional int32 mp = 3;	// 魔法值
+	optional int32 c_turn = 4;	//普通攻击剩余步数（敌方有效）
+}
+
+// 操作前的数据更新
+message BeforeUpdate {
+	required int32 id = 1;			// ID
+	//optional int32 add_turn = 2;	//往前走的步数
+}
+
+// 操作后的数据更新
+message AfterUpdate {
+	required int32 id = 1;			// ID
+	optional int32 add_mp = 2;		//增加的魔法值
+}
+
+message CleanHarmUnit {
+	required int32 target_id = 1;	//目标
+	required int64 hp_change = 2;	//血量变化
+	optional PackRetinue.RetinueChange retinue = 3;	//侍从更新
+	required int32 harm_type = 4;	//伤害类型（1为普通，2为暴击，3为weak)
+	// 反击伤害
+}
+// 消子的伤害
+message CleanHarm {
+	required int32 zhu_position = 1;//珠子
+	required int32 target_row = 2;	//打中的目标在第几行(从6开始)
+	repeated CleanHarmUnit harms = 4;	//详细伤害值
+}
+
+// combo其中一个匹配单元 
+message MatchUnit {
+	repeated int32 positions = 1;	//珠子的位置
+	required int32 match_type = 2;	//匹配类型(1为相连，2为触发bonus，当触发bonus时，第一个子是触发的珠子位置)
+}
+
+// 消掉的珠子信息
+message CleanCombo {
+	repeated MatchUnit match_infos = 1;	//匹配信息列表
+}
+
+// 特殊的一些效果
+message SpecailEffect {
+	required int32 effect_type = 1;	//效果类型：1为变色珠子(参数：珠子位置，珠子颜色), 2为往前走几步（参数：走的步数）
+	repeated int32 effect_params = 2;	//一些参数
+}
+
+// 技能对某一个单位的效果
+message SkillEffect {
+	required int32 target_id = 1;	//目标
+	optional int64 hp_change = 2;	//血量变化(伤血填负值)
+	optional int32 mp_change = 3;	//魔法值变化（增加了正值）
+	optional PackBuffer.BufferChange buffer = 4;	//buff变化
+	optional PackRetinue.RetinueChange retinue = 5;	//侍从
+	optional SpecailEffect extra_effect = 6;	//一些额外的效果
+	optional int32 skill_effect_type = 7;	//效果的类型
+	optional int32 fight_section = 8;		//第几段攻击
+}
+
+// Buffer的效果
+message BufferEffect {
+	required int32 id = 1;	//buffer唯一ID
+	required int32 target_id = 2;	//目标ID
+	optional int64 hp_change = 3;	//血量变化
+	optional int32 mp_change = 4;	//魔量变化
+}
+
+// 使用技能操作
+message FightOpUseSkill {
+	required int32 fighter_aoi_id = 1;	//技能使用者
+	//required int32 target_aoi_id = 2;	//被选中的受击者
+	//required bool is_common = 2;		//是否普攻
+	required int32 skill_id = 3;	//技能ID
+	repeated SkillEffect before = 4;	//先攻
+	repeated SkillEffect between = 5;	//中段
+	repeated SkillEffect after = 6;		//追攻
+
+	optional int32 c_turn = 7;			//技能完成后的步数（怪物普攻有效）
+	optional bool  is_extra = 8;			//是否是额外附加的一次行动
+}
+
+// 补子的结构
+message FightSuppply {
+	required int32 line = 1;	//第几条纵线
+	repeated int32 colors = 2;	//补充的颜色列表（按顺序填充,最选填的放前面）
+}
+
+// 交换或者触碰操作
+message FightOpSwap {
+	required int32 first = 1;				//第一个珠子position
+	optional int32 second = 2;				//第二个珠子position
+	repeated CleanHarm harms = 3;			//消子伤害(客户端不上传消子伤害)
+	repeated CleanCombo clean_combos = 4;	//消掉的多组珠子
+	repeated PluzzlesItem bonus = 6;		//添加的bonus
+	repeated PackBuffer.BufferChange buffer = 7;		//buffer变化
+}
+
+// 补子操作
+message FightOpSupply {
+	repeated FightSuppply supplys = 1;		//补子列表
+	repeated CleanHarm harms = 2;			//消子伤害(客户端不上传消子伤害)
+	repeated CleanCombo clean_combos =3;	//消掉的多组珠子
+	repeated PluzzlesItem bonus = 4;		//添加的bonus
+	repeated PackBuffer.BufferChange buffer = 6;		//buffer变化
+}
+
+// 洗牌操作
+message FightOpXipai {
+	repeated PluzzlesItem xipai_items = 1;//当前盘面上的珠子列表
+}
+
+// 操作前
+message FightOpBefore {
+	repeated BufferEffect buffer_effects = 1;	//buff的效果列表
+	repeated BeforeUpdate before_update = 2;	//操作前的数据变化（步数及魔法值变化）
+	optional PackBuffer.BufferChange buffer = 3;	//buff更新，客户端用来更新数据层
+}
+
+// 操作后
+message FightOpAfter {
+	repeated BufferEffect buffer_effects = 1;	//buff的效果列表
+	repeated AfterUpdate  after_update = 2;		//技能操作后的
+	optional PackBuffer.BufferChange buffer = 3;	//buff更新客户端用来更新数据层
+}
+
+// 一个战斗单元
+message FightUnit {
+	required int32 fight_sequence_id = 1;	//战斗序列ID(初始为-1， 递减)
+	required int32 op = 2;					//操作类型， 见FightDefs
+
+	// 客户端逻辑
+	optional FightOpSwap     op_swap = 3;		//交换珠子
+	optional FightOpSupply 	 op_supply = 4;		//补子
+	optional FightOpXipai 	 op_xipai = 5;		//洗牌
+
+	// 服务端逻辑
+	optional FightOpBefore 	  op_before = 6;		//一方操作前
+	optional FightOpUseSkill  op_skill = 7;			//使用技能操作
+	optional FightOpAfter 	  op_after = 8;			//一方操作后	
+
+	optional FightError error = 9;		//错误信息
+	// 对象hp, mp更新
+	repeated FightObjectUpdate objs_update = 10;	//执行完成后，对象状态值更新，客户端用来更新数据层
+}
+
+message FightError {
+	required int32 err_id = 1;		//错误ID(无错误为0)
+	repeated string err_params = 2;	//错误参数
+}
+
+//游戏开始
+message C2M_GAME_START {
+	optional M2C_FIGHT_OP_FIN client = 2;	//客户端计算结果
+} // <==  M2C_FIGHT_OP_FIN
+
+//操作较验
+message C2M_FIGHT_CHECK {
+	required int32 packet_seq_id = 1;		//包ID
+	required FightUnit op_unit = 2;	//操作
+	optional M2C_FIGHT_CHECK client = 3;	//客户端计算结果
+}
+message M2C_FIGHT_CHECK {
+	required int32 packet_seq_id = 1;		//包ID
+	required FightUnit op_unit = 2;	//操作
+}
+
+// 使用技能
+message C2M_FIGHT_USE_SKILL {
+	required int32 packet_seq_id = 1;	//包ID
+	required int32 skill_id = 2;	 	 //技能ID
+	required int32 fighter_aoi_id = 3;	 //技能使用者
+	repeated int32 attacked_aoi_ids = 5; //被攻击的目标列表
+
+	optional M2C_FIGHT_USE_SKILL client = 6;	//客户端计算结果
+}
+
+// 使用技能返回
+message M2C_FIGHT_USE_SKILL {
+	required int32 packet_seq_id = 1;	//包ID
+	optional FightUnit fight_result = 2;	//操作结果
+}
+
+//我方操作结束
+message C2M_FIGHT_OP_FIN {
+	required int32 packet_seq_id = 1;	//包ID
+	optional M2C_FIGHT_OP_FIN client = 2;	//客户端计算结果
+}
+//服务端回包(操作结束后的对方一系列操作)(如果到新的一波，则下发一个新的操作包)
+message M2C_FIGHT_OP_FIN {
+	required int32 packet_seq_id = 1;	//包ID
+	optional FightUnit my_after = 2;	//我方操作后
+	optional FightUnit enemy_before = 3;//敌方操作前
+	repeated FightUnit enemy_use_skill = 4;	//敌方使用技能
+	optional FightUnit enemy_after = 5;	//敌方使用技能后
+	optional FightUnit my_before = 6;	//我方操作前(此后为玩家操作)
+	required bool is_next_wave = 7;		//是否执行完到下一波
+}
+
+//到下一波次
+message C2M_FIGHT_NEXT_WAVE {
+	required int32 packet_seq_id = 1;	//包ID
+	optional M2C_FIGHT_OP_FIN client = 2;	//客户端计算结果
+}
+//<==M2C_FIGHT_OP_FIN
+
+//游戏结束
+message C2M_FIGHT_FINISH {
+	required int32 packet_seq_id = 1;	//包ID
+	required bool is_win = 2;	//是否胜利
+}
+message M2C_FIGHT_FINISH {
+	required int32 packet_seq_id = 1;	//包ID
+	required bool is_win = 2;	//是否胜利
+}
+//-------------------------------------- 盘面数据 -----------------------------------------
+
+// 第几波的数据
+message Wave {
+	required int32 wave_id = 1;			//第几波，从1开始
+	repeated int32 enemies = 2;			//所有的敌人
+	required bool  is_boss = 3;			//是否BOSS轮
+	required bool  is_first_hand = 4;	//是否先手
+}
+
+//珠子信息
+message PluzzlesItem {
+	required int32 zhu_position = 1;	//棋盘的位置
+	required int32 color = 2;			//珠子的颜色
+}
+
+// 当前盘面状态
+message M2C_FIGHT_INFO {
+	repeated FightObject objs = 1;	//战斗对象信息
+	repeated PluzzlesItem items = 2;//珠盘信息
+	repeated Wave waves = 3;		//波次信息
+	repeated int32 heros = 4;		//我方英雄
+
+	required int32 now_wave = 5;			//当前第几波
+	required int32 last_op = 6;				//上一次的操作
+	required int64 skill_random = 7;		//技能计算随机数
+	required int64 supply_random = 8;		//补子随机数
+	required int32 packet_seq_id = 9;		//包序号起始ID
+	required int32 obj_id_start = 10;		//服务端当前存储的ID
+	required int32 fight_sequence_id = 11;	//战斗序列ID
+}
