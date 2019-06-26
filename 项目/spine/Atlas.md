@@ -1,0 +1,5 @@
+Atlas主要是关于读取Atlas.txt文件的，调用方法ReadValue, ReadTuple读取每个属性值，一个Atlas由一个 `List<AtlasPage>` 和 `List<AtlasRegion>` 以及一个外部引进的textureLoader组成，调用Load方法从TextReader中读取一个Page头，并将其引用图集资源读入关联到Page的rendererObject上，然后循环读取所有关联的Region，每个Region都有个关联到Page的引用。
+
+并提供了两个外部调用的方法，一个是FlipV，用于对Region进行翻转操作，一个是FindRegion，用于根据名字查找一个Region，这个操作比较费事，最好将操作结果做一个缓存。
+
+对AtlasPage和AtlasRegion的Clone操作都是一个浅拷贝操作。在Load方法关联到的图集在对象销毁的时候也会清除。
