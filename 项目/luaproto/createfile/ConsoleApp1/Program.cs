@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
@@ -14,18 +15,32 @@ namespace ConsoleApp1
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            var files = Directory.GetFiles(".", "*proto");
+            string path = args[0];
+            List<string> filename = new List<string>();
+            Console.WriteLine("filepath :" + path);
+            for (int i = 1;i < args.Length; ++i)
+            {
+                Console.WriteLine("insertname :" + args[i]);
+                filename.Add(args[i]);
+            }
+            
+            var files = Directory.GetFiles(path, "*proto");
             for(int i = 0;i < files.Length; ++i)
             {
-                using (FileStream fs = File.Create(files[i] + ".txt"))
+                var name = Path.GetFileName(files[i]);
+                Console.WriteLine("filename " + name);
+                if (!filename.Contains(name))
+                {
+                    continue;
+                }
+                using (FileStream fs = File.Create(name + ".txt"))
                 {
                     string text = LuaProto.CreateLuaProto(files[i]);
                     AddText(fs, text);
                 }
             }
             var txtFiles = Directory.GetFiles(".", "*txt");
-            FileStream csFs = File.Create("LuaManager_proto.cs");
+            FileStream csFs = File.Create("..\\LuaManager_proto.cs");
             string start = @"using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +57,7 @@ public partial class LuaManager
                 var text = File.ReadAllText(txtFiles[i]);
                 AddText(csFs, text);
             }
-            string end = "\n}";
+            string end = "\r\n}";
             AddText(csFs, end);
             csFs.Close();
         }
