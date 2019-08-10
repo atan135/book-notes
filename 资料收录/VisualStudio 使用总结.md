@@ -54,6 +54,12 @@
 
 consoleapp生成的一些细节：
 
-在项目目录下，运行 `dotnet publish -c Release -r win10-x64 ` 可以生成release版本的可执行文件和相关dll，整体打包出来可以直接使用。
+在项目目录下，运行 `dotnet publish -c Release -r win10-x64 ` 可以生成release版本的可执行文件和相关dll，整体打包出来可以直接使用。使用方式类似ConsoleApp1.exe ..\..\include\protobuf\ fight.proto buffer.proto retinue.proto
 
 要使得生成的.cs文件不会被visual studio对行尾一致性报警和强制格式化，所有的换行都使用 `\r\n` 。
+
+visual studio 2019不能正确生成dll的解决方法：
+
+首先在 **工具>选项>适用于Unity的工具** 下将 **访问项目属性** 设置为true，将 **禁止完整生成项目** 设置为false。
+
+然后在 **项目属性** 中保证生成输出类型为 **类库** ，然后重新生成。
