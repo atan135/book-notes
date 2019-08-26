@@ -2,6 +2,34 @@ Mariadb是遵循GPL v2协议的开源软件，具体授权规则[参照这里](h
 
 ### 下载安装
 
+#### 使用yum下载安装
+
+使用官网推荐安装流程
+
+1. 点击链接<https://downloads.mariadb.org/mariadb/repositories/#mirror=supportex>
+
+2. 选择对应的版本，本机使用CentOS yum安装
+
+3. 更新yum目的仓库，新建`/etc/yum.repos.d/MariaDB.repo` , 内容如下：
+
+   ```shell
+   # MariaDB 10.3 CentOS repository list - created 2019-08-26 15:06 UTC
+   # http://downloads.mariadb.org/mariadb/repositories/
+   [mariadb]
+   name = MariaDB
+   baseurl = http://yum.mariadb.org/10.3/centos7-amd64
+   gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+   gpgcheck=1
+   ```
+
+4. 使用yum下载，`yum install MariaDB-server MariaDB-client`
+
+5. root下执行`mysql_secure_installation` ，根据提示操作更新root密码及其他配置
+
+
+
+### 使用源码安装
+
 使用官方安装流程，源码下载编译安装方式。参见[这里](https://mariadb.com/kb/en/library/source-building-mariadb-on-centos/)
 
 ```shell
